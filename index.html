@@ -1,0 +1,48 @@
+<!--Using JavaScript we are going to generate a
+password
+
+html
+ id and p element
+ basics of JS
+ 	charAt()
+ 	math.random()
+ 	innerHTML
+ 	onclick
+
+
+ IDE or platform
+
+ VS Code editor -->
+
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generation</title>
+ </head>
+ <body>
+    <script>
+        function generate(){
+            var output=document.getElementById("demo");
+            var i;
+            var password="";
+            var values="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@$&";
+            //console.log(Math.random());
+            //console.log(values.length);
+            for (i=1;i<9;i++){
+                var modpass=(Math.random()*values.length);
+                password=password+values.charAt(modpass);
+            }
+            output.innerHTML=password;
+            
+        }
+    </script>
+ <h1>Hey everyone click below to generate a Random password</h1>
+ <p id="demo"></p>
+ <button onclick="generate()">Submit</button>   
+ </body>
+ </html>
